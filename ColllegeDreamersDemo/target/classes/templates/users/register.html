@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Login</title>
+</head>
+
+<body>
+
+<header th:replace="layout :: site-header" />
+
+<h1>Login in the Blog</h1>
+
+<form method="post" th:object="${registrationform}">
+    <div class="form-group row">
+        <label for="firstname" class="col-md-2 col-form-label">First Name</label>
+        <div class="col-md-10" >
+            <input type="text" name="firstname" placeholder="First Name" id="firstname" class="form-control">
+        </div>
+
+
+    </div>
+    <div class="form-group row">
+        <label for="lastname" class="col-md-2 col-form-label">Last Name</label>
+        <div class="col-md-10" >
+            <input type="text" name="lastname" placeholder="Last Name" id="lastname" class="form-control">
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <label for="telnum" class="col-12 col-md-2 col-form-label">Contact Tel.</label>
+        <div class="col-5 col-md-3" >
+            <input type="tel" name="areacode" placeholder="Area code" id="areacode" class="form-control">
+        </div>
+
+        <div class="col-7 col-md-7" >
+            <input type="tel" name="telnum" placeholder="Tel. Number" id="telnum" class="form-control">
+        </div>
+
+    </div>
+    <div class="form-group row">
+        <label for="emailid" class="col-md-2 col-form-label">Email </label>
+        <div class="col-md-10" >
+            <input type="email" name="emailid" placeholder="Email" id="emailid" class="form-control">
+        </div>
+
+    </div>
+
+</form>
+
+<footer th:replace="layout :: site-footer" />
+
+</body>
+
+</html>

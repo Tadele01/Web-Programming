@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: collegedreamersdemo.demo.DemoApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 262.882 s - in collegedreamersdemo.demo.DemoApplicationTests
