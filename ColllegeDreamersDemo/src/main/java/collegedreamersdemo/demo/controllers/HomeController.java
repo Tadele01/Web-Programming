@@ -35,18 +35,5 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("/posts/view/{id}")
-    public String view(@PathVariable("id") Long id,
-                       Model model) {
-        Post post = postService.findById(id);
 
-        if (post == null) {
-            notificationService.addErrorMessage(
-                    "Cannot find post: " + id);
-            return "redirect:/";
-        }
-
-        model.addAttribute("post", post);
-        return "/posts/index";
-    }
 }

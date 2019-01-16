@@ -11,7 +11,8 @@ import java.util.List;
 
 @Service
 @Primary
-public class LoginServiceJpaImpl implements LoginService{
+public class LoginServiceJpaImpl {
+
 
 
 }
