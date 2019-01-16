@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th:="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0 ">
+    <!--<link rel="stylesheet" th:href="@{/js/bootstrap.min.js}"/>-->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{/css/bootstrap1.css}"/>
+    <script type="text/javascript" th:src="@{/js/bootstrapjquery.js}"></script>
+    <script type="text/javascript" th:src="@{/js/proper.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.js}"></script>
+    <script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+
+    <title>About Courses</title>
+</head>
+<body>
+
+<nav class="navbar navbar-dark navbar-expand-sm bg-dark ">
+    <div class="container-fluid">
+        <a href="#" class="navbar navbar-brand" ><img th:src="@{/img/ProjectLogo.PNG}" height="30" width="40" style="border-radius: 50px"></a>
+
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#items">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div>
+            <div class="collapse navbar-collapse" id="items">
+                <ul class="navbar-nav " >
+                    <li class="nav-item"><a href="#" class="nav-link lead pt-0 mr-3 text-white" >Home</a></li>
+                    <li class="nav-item "><a href="#" class="nav-link lead pt-0 mr-3 text-white">Course</a></li>
+                    <li class="nav-item "><a href="#" class="nav-link lead pt-0 mr-3 text-white">Exams</a></li>
+                    <li class="nav-item "><a href="#" class="nav-link lead pt-0 mr-3 text-white">Discuss</a></li>
+                    <li class="nav-item "><a href="#" class="nav-link lead pt-0 mr-3 text-white">News</a></li>
+                    <li class="nav-item "><a href="#" class="nav-link lead pt-0 mr-3 text-white">About Us</a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container" >
+    <div class="card-deck">
+        <div class="card-columns">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-5 ml-0">
+
+                <div class="card" style="max-width: 300px;">
+                    <img th:src="@{/img/Math.jpg}" class="card-img-top" alt="card-img"/>
+                    <div class="card-block text-right">
+                        <!-- <h4 class="card-title">Mathmatics</h4> -->
+                        <p class="card-text lead" th:text="${course.subjectDesc}">Mathmatics</p>
+                        <div class="collapse lead" id="More">
+                            Mathematics is the science of numbers and operations,interrelations,combinations,generalization,and Abstraction.
+                        </div>
+
+                        <a href="#" class="btn btn-outline-primary active dropdown-toggler" data-toggle="dropdown">More</a>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-success" href="#" type="button"  data-toggle="collapse" data-target="#More">More Notes</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Exams</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Pdfs</button>
+                        </div>
+                    </div>
+                    <div class="card-footer">Maths</div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-5">
+
+                <div class="card" style="max-width: 300px;">
+                    <img th:src="@{/img/Physics.jpg}" class="card-img-top" alt="card-img"/>
+                    <div class="card-block text-right">
+                        <!-- <h4 class="card-title">Physics</h4> -->
+                        <p class="card-text lead">
+                            Physics is a natural science based on experiments,measurements and Mathematical analysis.</p>
+                        <div class="collapse lead" id="PhysicsMore">
+                            The branch of Science concerned with the nature and properties of matter and energy.The subject
+                            matter of physics includes mechanics,heat,light and other radiation,sound,electricity,magnetism,and the structure of atoms.
+                            The physical property and phenomena of something.
+                        </div>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm  dropdown-toggler" data-toggle="dropdown">More</a>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-success" href="#" type="button"  data-toggle="collapse" data-target="#PhysicsMore">More Notes</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Exams</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Pdfs</button>
+                        </div>
+                    </div>
+                    <div class="card-footer">Physics</div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-5">
+
+                <div class="card" style="max-width: 300px;">
+                    <img th:src="@{/img/English.jpg}" class="card-img-top" alt="card-img"/>
+                    <div class="card-block text-right">
+                        <!-- <h4 class="card-title">English</h4> -->
+                        <p class="card-text lead">
+                            English is a west Germanic language that was first spoken in early medieval England and Eventually became a global lingua.  </p>
+                        <div class="collapse lead" id="EnglishMore">
+                            English is a language - originally the language of England.Today English is the main language of UK,Ireland,USA and more than fifty other language.
+                            Throughout the world there are over 400 Million speakers of English.
+                        </div>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm  dropdown-toggler" data-toggle="dropdown">More</a>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-success" href="#" type="button"  data-toggle="collapse" data-target="#EnglishMore">More Notes</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Exams</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Pdfs</button>
+                        </div>
+                    </div>
+                    <div class="card-footer">English</div>
+                </div></div>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-5">
+
+                <div class="card" style="max-width: 300px;">
+                    <img  th:src="@{/img/Aptitude.jpg}" class="card-img-top" alt="card-img"/>
+                    <div class="card-block text-right">
+                        <!-- <h4 class="card-title">Aptitude</h4> -->
+                        <p class="card-text lead">
+                            Aptitude is a component of a competence to do a certain kind of work at a certain level.
+                            Acquired or natural ability (Usually measurable with aptitude tests)</p>
+                        <div class="collapse lead" id="AptitudeMore">
+                            One's Aptitude is the natural ability to do something:a talent.Something unrelated to practiced skills or learned knowledge.Interestingly this may be a physical or mental ability.A talent for a certain sport,playing a certain instruments,or solving math problem.
+                        </div>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm  dropdown-toggler" data-toggle="dropdown">More</a>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-success" href="#" type="button"  data-toggle="collapse" data-target="#AptitudeMore">More Notes</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Exams</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Pdfs</button>
+                        </div>
+                    </div>
+                    <div class="card-footer">Aptitude</div>
+                </div></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-5">
+
+                <div class="card" style="max-width: 300px;">
+                    <img th:src="@{/img/Civics.png}" class="card-img-top" alt="card-img"/>
+                    <div class="card-block text-right">
+                        <!-- <h4 class="card-title">Civics</h4> -->
+                        <p class="card-text lead">
+                            The study of rights and duties of citizenship.
+                            Civics or civic education is the study of the theoretical,political and practical aspects of citizenship,</p>
+                        <div class="collapse lead" id="CivicsMore">
+                            Civics is also called a political science which means,Political-related to government or politics and science means studying the physical and natural world through observation or practically in a systematics way.
+                        </div>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm  dropdown-toggler" data-toggle="dropdown">More</a>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-success" href="#" type="button"  data-toggle="collapse" data-target="#CivicsMore">More Notes</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Exams</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Pdfs</button>
+                        </div>
+                    </div>
+                    <div class="card-footer">Civics</div>
+                </div></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-5">
+
+                <div class="card" style="max-width: 300px;">
+                    <img th:src="@{/img/Chemistry.jpg}" class="card-img-top" alt="card-img"/>
+                    <div class="card-block text-right">
+                        <!-- <h4 class="card-title">Chemistry</h4> -->
+                        <p class="card-text lead">
+                            The branch of science concerned with the substance of matter is Composed,the investigation of their properties and reactions,and the use of such reactions to form new substances.the complex emotional between people."their affair was triggered by intense sexual chemistry."
+                        </p>
+                        <div class="collapse lead" id="ChemistryMore">
+                            Chemistry is a way to study the properties,characterstics,and chemical changes of matter.It also studies about subatomic particles,which are smaller than atoms.
+                            Chemistry itself has been around for a very long time.Modern chemistry dates back to 17th century.Founder of this scientific field is Robert Boyle.
+                        </div>
+
+                        <a href="#" class="btn btn-outline-primary btn-sm  dropdown-toggler" data-toggle="dropdown">More</a>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-success" href="#" type="button"  data-toggle="collapse" data-target="#ChemistryMore">More Notes</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Exams</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Pdfs</button>
+                        </div>
+                    </div>
+                    <div class="card-footer">Chemistry</div>
+                </div></div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-5">
+
+                <div class="card" style="max-width: 300px;">
+                    <img th:src="@{/img/Biology.jpg}" class="card-img-top" alt="card-img"/>
+                    <div class="card-block text-right">
+                        <!-- <h4 class="card-title">Biology</h4> -->
+                        <p class="card-text lead">
+                            The study of living organisms,divided into many specialized fields that cover their morphology,physiology,anatomy,behaviour,origin,and distribution.
+
+                        <div class="collapse lead" id="BiologyMore">
+                            There are atleast nine umbrella branches of Biology.
+                            <dl class="text-right">
+                                <dt>BioChemistry</dt>
+                                <dd>the study of the material substances that make up the living things</dd>
+                                <dt>Botany</dt>
+                                <dd>the study of Plant</dd>
+                                <dt>Cellular Biology</dt>
+                                <dd>the study of basics cellular units that make up the living things</dd>
+                                <dt>Ecology</dt>
+                                <dd>the study of how organism interact with their environment</dd>
+                                <dt>Evolutionary Biology</dt>
+                                <dd>the study of the origin and changes in the diversity of life over time</dd>
+                                <dt>Genetics</dt>
+                                <dd>the study of heredity.</dd>
+                                <dt>Molecular Biology</dt>
+                                <dd>the study of biological molecules.</dd>
+                                <dt>Physiology</dt>
+                                <dd>the study of the function of organism and their part.</dd>
+                                <dt>Zoology</dt>
+                                <dd>the study of Animals and their behaviour.</dd>
+                            </dl>
+                        </div>
+                        </p>
+                        <a href="#" class="btn btn-outline-primary btn-sm  dropdown-toggler" data-toggle="dropdown">More</a>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item btn btn-success" href="#" type="button"  data-toggle="collapse" data-target="#BiologyMore">More Notes</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Exams</button>
+                            <button class="dropdown-item btn btn-success" href="#" type="button" >Pdfs</button>
+                        </div>
+                    </div>
+                    <div class="card-footer">Biology</div>
+                </div> </div>
+
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
