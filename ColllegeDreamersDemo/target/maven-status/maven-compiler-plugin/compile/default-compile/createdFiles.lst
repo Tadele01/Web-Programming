@@ -6,10 +6,8 @@ collegedreamersdemo\demo\forms\LoginForm.class
 collegedreamersdemo\demo\models\User.class
 collegedreamersdemo\demo\services\NotificationServiceImpl$NotificationMessage.class
 collegedreamersdemo\demo\controllers\HomeController.class
-collegedreamersdemo\demo\services\LoginService.class
 collegedreamersdemo\demo\models\Post.class
 collegedreamersdemo\demo\services\NotificationServiceImpl.class
-collegedreamersdemo\demo\controllers\AccountController.class
 collegedreamersdemo\demo\services\NotificationServiceImpl$NotificationMessageType.class
 collegedreamersdemo\demo\repositories\PostRepository.class
 collegedreamersdemo\demo\services\PostServiceJpaImpl.class

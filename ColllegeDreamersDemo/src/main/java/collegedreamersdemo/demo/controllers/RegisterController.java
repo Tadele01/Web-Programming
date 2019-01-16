@@ -8,6 +8,7 @@ import com.nulabinc.zxcvbn.Zxcvbn;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -121,6 +122,12 @@ public class RegisterController {
 
         modelAndView.addObject("successMessage", "Your password has been set!");
         return modelAndView;
+    }
+    @PostMapping
+    public String processDesign(
+    ) {
+
+        return "redirect:/index";
     }
 
 }
