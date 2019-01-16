@@ -1,89 +1,96 @@
 package collegedreamersdemo.demo.models;
 
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.data.annotation.Transient;
+
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    private int id;
 
-    @Column(nullable = false, length = 30, unique = true)
-    private String username;
+    @Column(name = "email", nullable = false, unique = true)
+    @Email(message = "Please provide a valid e-mail")
+    @NotEmpty(message = "Please provide an e-mail")
+    private String email;
 
-    @Column(length = 60)
-    private String passwordHash;
+    @Column(name = "password")
+    @Transient
+    private String password;
 
-    @Column(length = 100)
-    private String fullName;
+    @Column(name = "first_name")
+    @NotEmpty(message = "Please provide your first name")
+    private String firstName;
 
-    @OneToMany(mappedBy = "author")
-    private Set<Post> posts = new HashSet<Post>();
+    @Column(name = "last_name")
+    @NotEmpty(message = "Please provide your last name")
+    private String lastName;
 
-    public Long getId() {
+    @Column(name = "enabled")
+    private boolean enabled;
+
+    @Column(name = "confirmation_token")
+    private String confirmationToken;
+
+    public String getConfirmationToken() {
+        return confirmationToken;
+    }
+
+    public void setConfirmationToken(String confirmationToken) {
+        this.confirmationToken = confirmationToken;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getPassword() {
+        return password;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getPasswordHash() {
-        return passwordHash;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setPasswordHash(String passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getFullName() {
-        return fullName;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public Set<Post> getPosts() {
-        return posts;
+    public String getEmail() {
+        return email;
     }
 
-    public void setPosts(Set<Post> posts) {
-        this.posts = posts;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public User() {
+    public boolean getEnabled() {
+        return enabled;
     }
 
-    public User(String username, String fullName) {
-        this.username = username;
-        this.fullName = fullName;
-    }
-
-    public User(Long id, String username, String fullName) {
-        this.id = id;
-        this.username = username;
-        this.fullName = fullName;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", passwordHash='" + passwordHash + '\'' +
-                ", fullName='" + fullName + '\'' +
-                '}';
+    public void setEnabled(boolean value) {
+        this.enabled = value;
     }
 }
