@@ -1,0 +1,303 @@
+
+body {font-family: "Lato", sans-serif;}
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+/* Change background color of buttons on hover */
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Set default styles for tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Style each tab content individually */
+#London {background-color:red;}
+#Paris {background-color:green;}
+#Tokyo {background-color:blue;}
+#Oslo {background-color:orange;}
+
+.row-header{
+    margin: 0px auto;
+    margin-top: 35px;
+    padding: 2px auto;
+}
+
+.row-content{
+    margin: 0px auto;
+    /* margin-left:100px; */
+    align-items: center;
+    align-content: center;
+    margin-top: 25px;
+    border-bottom: 1px ridge;
+    min-height: 250px;
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    margin: 0px auto;
+    padding: 20px 0px 20px 0px;
+    margin-top: 200px;
+}
+.jumbotron{
+    /* font-family: 'Segoe UI', Tahoma, 'Geneva, Verdana, sans-serif'; */
+    font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+    padding: 70px 30px 70px 30px;
+    margin: 0px auto;
+
+    color: floralwhite;
+}
+
+.address{
+    font-size: 80%;
+    margin: 0px ;
+    color: #0f0f0f;
+}
+#accordion{
+
+}
+
+body{
+    padding: 50px 0px 0px 0px;
+    z-index: 0;
+    margin : 0 !important ;
+}
+.navbar-dark{
+    background: black;
+}
+.card-header-custom{
+    background: #ffae42;
+}
+
+
+
+
+
+.tab-content{
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 10px; 
+}
+
+.carousel{
+    background: blue;
+    margin-top: 50px;
+
+}
+.carousel-item{
+    height: 300px;
+
+}
+.carousel-caption p{
+    color: #000;
+    font-size:20px;
+    font-weight:bold;
+}
+.mt-0{
+    font-size:30px;
+    color: white;
+    font-weight:bolder;
+}
+.carousel-item img{
+    position: absolute;
+    top :0;
+    left: 0;
+    min-height: 300px;  
+}
+
+#carouselButton{
+    right: 0px;
+    position:absolute;
+    bottom: 0px;
+}
+
+.medium-size{
+    font-size: 140%;
+    font-weight: bolder;
+    color: black;
+}
+.motivation{
+    color: rgb(82, 52, 52);
+    font-weight: bolder;
+    font-size: 50px;
+}
+.btn {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+.btn-course {
+    /* font-family: Raleway-SemiBold; */
+    color: white;
+    background-color: #1abc9c;
+    border: medium none;
+    border-radius: 25px;
+    height: 45px;
+    display: inline-block;
+    /* font-weight: 500; */
+    font-size: 1.5em;
+    /* padding: 12px; */
+    text-align: center;
+    text-decoration: none;
+    width: 250px;
+  }
+  
+.btn-course:hover{
+    color: white;
+    background-color: rgb(44, 219, 184);
+}
+.navigators{
+    float: right;
+    margin-right: 20px;
+}
+.nav-item{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: #fff;
+    padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+   
+}
+/* .nav-item:hover{
+    color: white;
+    background-color: rgb(44, 219, 184);
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4em;
+    padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+} */
+.course{
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.45);
+    background-color: white;
+    width: 30%;
+    margin-top: 25px;
+    border-radius: 10px;
+    height: fit-content;
+    margin-left: 5px;
+}
+.center{
+    text-align: center;
+}
+.box {
+    position: relative;
+    width: 30%;
+    margin-top: 25px;
+    /* margin-top: 25px; */
+    margin-left: 20px;
+    height: fit-content;
+    background: white;
+    color: #000;
+    padding: 20px;    
+}
+
+.box:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: .9;
+}
+
+
+a.divLink {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-decoration: none;
+    /* Makes sure the link doesn't get underlined */
+    z-index: 10;
+    /* raises anchor tag above everything else in div */
+    background-color: white;
+    /*workaround to make clickable in IE */
+    opacity: 0;
+    /*workaround to make clickable in IE */
+    filter: alpha(opacity=0);
+    /*workaround to make clickable in IE */
+}
+.btn-course-take{
+    color: white;
+    background-color: #1abc9c;
+    border: medium none;
+    border-radius: 25px;
+    display: inline-block;
+    /* font-weight: 500; */
+    font-size: 0.9em;
+    /* padding: 12px; */
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+    height: 35px;
+    align-content: center;
+
+}
+.btn-course-take:hover{
+    color: white;
+    background-color: rgb(44, 219, 184);
+
+}
+/* .courseStores{
+    overflow: hidden;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.courseStores a{
+    background-color: #1abc9c;
+    border: medium none;
+    border-radius: 20px;
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    width: fit-content;
+    text-align: center;
+    font-size: 0.9em;
+} */
+
+.advertize{
+    background: hsl(193, 8%, 22%);
+    min-height: 300px;
+    min-width: 100%;
+    margin-bottom: 20px;
+    margin-top: 40px;
+}
+.advertize h2{
+    color: white;
+    margin-top: 25px;
+}
+.advertize p{
+    color: white;
+    margin-top: 3px;
+}
+.advertize-pic{
+    box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 3px rgba(0,0,0,.45);
+    border-radius: 20px;
+    min-height: 100%;
+    margin-bottom: 20px;
+    align-content: center;
+    align-items: center;
+    align-self: auto;
+    text-align: center;
+    background-color: #eaedf1;
+    
+}

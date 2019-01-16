@@ -1,0 +1,43 @@
+#body{
+    margin : 0;
+    padding : 0;
+   }
+#box1{
+    height : 100vh;
+    width : 100%;
+    background-image : url("../img/3d_rendering_girl_face_3d.jpg");
+    background-size : cover;
+    display : table;
+    background-attachment : fixed;
+    
+    
+   }
+#box2{
+    height : 100vh;
+    width : 100%;
+    background-image : url("../img/batman_arkham_origins_joker_red_cap_warner_bros_interactive_entertainment_devil.jpg");
+    background-size : cover;
+    display : table;
+     background-attachment : fixed;
+    
+    
+   }
+#box3{
+    height : 100vh;
+    width : 100%;
+    background-image : url("../img/deus_ex_mankind_divided_adam_jensen_cyborgs.jpg");
+    background-size : cover;
+    display : table;
+     background-attachment : fixed;
+    
+    
+   }
+h1{
+  font-family : arial black;
+  font-size : 50px;
+  color : white;
+  margin : 0;
+  text-align : center;
+  vertical-align : middle;
+  display : table-cell;
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/images/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/images/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/images/bootstrap.social.css}">
+    <link rel="stylesheet" th:href="@{/images/styles.css}">
+
+    <style>
+        .course{
+            transition: 2s;
+        }
+        .course:hover{
+            transform:scale(1.3);
+            background: #ff5500;
+            box-shadow: 2px 2px 2px #000;
+            z-index: 2;
+        }
+    </style>
+
+
+    <title>Exam Page</title>
+</head>
+
+<body>
+<nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse " id="Navbar">
+            <ul class="navbar-nav mr-auto  ">
+                <li class="nav-item active"><a class="nav-link" href="#">
+                    Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="./courses.html">
+                    Courses</a></li>
+                <li class="nav-item"><a class="nav-link" href="examPage.html">Exams</a></li>
+                <li class="nav-item "><a class="nav-link" href="discussion.html">
+                    Discuss</a></li>
+                <li class="nav-item "><a class="nav-link" href="news.html">
+                    News</a></li>
+                <li class="nav-item "><a class="nav-link" href="aboutus.html">
+                    About Us</a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    </div>
+</nav>
+
+</nav>
+</div>
+<div class="container-fluid">
+    <div class="row row-content">
+        <div class="col-12 col-sm-4 course box">
+            <h3  class="center"><a class = "nav-link" href = "#" role = "button">Exam Page</a> </h3>
+            <div class=" col-12 col-sm-12">
+                <p>You can navigate exams through the links provided below which prepares you for grade 12 national examination based on the the examination list animated below.</p>
+                <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
+                    <strong>Select Exams</strong>
+                </button>
+                <div class="dropdown-menu">
+                    <h2 class="dropdown-header"><strong>Avaliable Exams</strong></h2>
+                    <a class="dropdown-item" href="#">English</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Mathimatics</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Chemistry</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Biology</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Physics</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Geography</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Civics</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Sat Apptitude</a>
+                    <div class="dropdown-divider"></div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="col-12 col-sm-3 course box">
+            <h3  class="center"><a class = "nav-link" href = "#" role = "button">Pre-Requisties</a> </h3>
+            <div class=" col-12 col-sm-12">
+                <p>Some pre-requisties before access this page</p>
+
+                <ol type="I">
+                    <li> You have to review the resources provided here first</li>
+
+                </ol>
+                <a role = "button" href = "courses.html" class="btn btn-course-take" >Take This Course
+                </a>
+            </div>
+
+
+    </div>
+
+    <div class="col-12 col-sm-4 course box">
+            <h3  class="center"><a class = "nav-link" href = "#" role = "button">Rules</a> </h3>
+            <div class=" col-12 col-sm-12">
+                <p>Some rules inorder to access this page</p>
+                <ol type="I">
+                <li> You have to be part of this system registered first</li>
+                <li> Those exams are prepared for grade 12 national exam takers ,so if possible you should be grade 12 student if nat it is possible for all</li>
+                <li> You should summit the ansewrs on time based on the given time schedule</li>
+                </ol>
+                <a role = "button" href = "courses.html" class="btn btn-course-take" >Take This Course
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row row-content">
+        <div class="col">
+            <div id="myCarousel" class="carousel slide"  data-ride="carousel" data-pause="hover"  data-interval="2000">
+                <div class="carousel-inner " role="listbox">
+                    <div class="carousel-item  active">
+                        <img class="d-block img-fluid" th:src="@{/images/images/maths1.jpg}" alt="Maths">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 style="color:#000;" class="mt-0">Mathimatics
+                                <span class="badge badge-danger  align-self-center">Math</span>
+                                <span class="badge badge-pill badge-secondary">exam detail info</span>
+                            </h1>
+                            <p class="d-none d-sm-block">Mathematicians seek and use patterns to formulate new conjectures; they
+                                resolve the trusth or falsity of conjectures by mathematical proof.Through the use of abstraction and logic, mathematics developed from counting,
+                                calculation, measurement, and the systematic study of the shapes and motions of physical objects.</p>
+                        </div>
+
+
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid" th:src="@{/images/images/chemistry.png}" alt="buffet">
+                        <div class="carousel-caption  d-none d-md-block">
+                            <h1 class="mt-0">Chemistry <span class="badge badge-danger">
+                           Chemo</span>
+                                <span class="badge badge-pill badge-secondary ">exam detail info</span></h1>
+                            <p class="d-none d-sm-block">Chemistry is the scientific discipline involved with elements and compounds
+                                composed of atoms, molecules and ions: their composition, structure, properties, behavior and the
+                                changes they undergo during a reaction with other substances </p>
+                        </div>
+
+
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"  th:src="@{/images/images/eng2.jpg}" alt="buffet">
+                        <div class="carousel-caption  d-none d-md-block">
+                            <h1 class="mt-0">English<span class="badge badge-danger">
+                            Eng</span>
+                                <span class="badge badge-pill badge-secondary   ">exam detail info</span></h1>
+                            <p class="d-none d-sm-block">English is a West Germanic language that was first spoken in early medieval
+                                England and eventually became a global lingua franca. It is closely related to the Frisian
+                                languages, but its vocabulary has been significantly influenced by other Germanic languages,
+                                particularly Norse (a North Germanic language), as well as by Latin and French. </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"  th:src="@{/images/images/geo1.jpg}" alt="buffet">
+                        <div class="carousel-caption  d-none d-md-block">
+                            <h1 class="mt-0" style="color: #000;">Geography <span class="badge badge-danger">Geo</span>
+                                <span class="badge badge-pill badge-secondary   ">exam detail info</span></h1>
+                            <p class="d-none d-sm-block">is a field of science devoted to the study of the lands, features, inhabitants, and
+                                phenomena of the Earth and planets. The first person to use the word γεωγραφία was Eratosthenes (276–194 BC.
+                                Geography is an all-encompassing discipline that seeks an understanding of Earth and its human and natural
+                                complexities—not merely where objects are, but also how they have changed and come to be.)</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"  th:src="@{/images/images/his1.jpg}" alt="buffet">
+                        <div class="carousel-caption  d-none d-md-block">
+                            <h1 class="mt-0">History <span class="badge badge-danger">His</span>
+                                <span class="badge badge-pill badge-secondary   ">exam detail info</span></h1>
+                            <p class="d-none d-sm-block">History is the study of the past as it is described in written documents.
+                                Events occurring before written record are considered prehistory. It is an umbrella term
+                                that relates to past events as well as the memory, discovery, collection, organization,
+                                presentation, and interpretation of information about these events. Scholars who write
+                                about history are called historians. </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"  th:src="@{/images/images/sat.jpg}" alt="buffet">
+                        <div class="carousel-caption  d-none d-md-block">
+                            <h1 class="mt-0">Apptitude <span class="badge badge-danger">Sat</span>
+                                <span class="badge badge-pill badge-secondary   ">exam detail info</span></h1>
+                            <p class="d-none d-sm-block">In addition to the grade 12 national examination the SAT (Scholastic Aptitude Test)
+                                is a globally recognized college admission test which serves as a prerequisite to apply for undergraduate
+                                programs in the most of the universities across United States of America. </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"  th:src="@{/images/images/civ.jpg}" alt="buffet">
+                        <div class="carousel-caption  d-none d-md-block">
+                            <h1 class="mt-0" style="color: #000;">Civics <span class="badge badge-danger">Civ</span>
+                                <span class="badge badge-pill badge-secondary   ">exam detail info</span></h1>
+                            <p class="d-none d-sm-block">Civics or civic education is the study of the theoretical, political
+                                and practical aspects of citizenship, as well as its rights and duties.It includes the study
+                                of civil law and civil code, and the study of government with attention to the role of
+                                citizens―as opposed to external factors―in the operation and oversight of government. </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"  th:src="@{/images/images/bio.jpg}" alt="buffet">
+                        <div class="carousel-caption  d-none d-md-block">
+                            <h1 class="mt-0">Biology <span class="badge badge-danger">Bio</span>
+                                <span class="badge badge-pill badge-secondary   ">exam detail info</span></h1>
+                            <p class="d-none d-sm-block">Biology is the natural science that studies life and living organisms,
+                                including their physical structure, chemical processes, molecular interactions, physiological
+                                mechanisms, development an </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"  th:src="@{/images   /images/phy1.jpg}" alt="alberto">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="mt-0">Physics  <span class="badge badge-danger">Phys</span>
+                                <span class="badge badge-pill badge-secondary   ">exam detail info</span></h1>
+
+                            <p class="d-none d-sm-block"> is the natural science that studies matter and its motion and behavior through
+                                space and time and that studies the related entities of energy and force.Physics is one of the most fundamental
+                                scientific disciplines, and its main goal is to understand how the universe behaves. </p>
+                        </div>
+
+                    </div>
+
+                </div>
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                    <li data-target="#myCarousel" data-slide-to="6"></li>
+                    <li data-target="#myCarousel" data-slide-to="7"></li>
+                    <li data-target="#myCarousel" data-slide-to="8"></li>
+                </ol>
+                <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-1 col-sm-2">
+                <h5>Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="contactus.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-7 col-sm-5">
+                <h5>Our Address</h5>
+                <address>
+                    121, Clear Water Bay Road<br>
+                    Clear Water Bay, Kowloon<br>
+                    HONG KONG<br>
+                    <i class="fa fa-phone fa-lg"></i> +852 1234 5678<br>
+                    <i class="fa fa-fax fa-lg"></i> +852 8765 4321<br>
+                    <i class="fa fa-envelope fa-lg"></i> <a href="mailto:confusion@food.net">confusion@food.net</a>
+                </address>
+            </div>
+            <div class="col-12 col-sm-4 align-self-center">
+                <div class="text-center">
+                    <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="> <i
+                            class="fa fa-facebook fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"> <i class="fa fa-linkedin fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"> <i class="fa fa-twitter fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-google" href="http://youtube.com/"> <i class="fa fa-youtube fa-lg"></i></a>
+                    <a class="btn btn-social-icon " href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <p>© Copyright 2018 Ristorante Con Fusion</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script th:src="@{/images/jquery.slim.min.js}"></script>
+<script th:src="@{/images/popper.min.js}"></script>
+<script th:src="@{/images/bootstrap.min.js}"></script>
+<script  th:src="@{/images/javascript.js}"></script>
+</body>
+
+
+
+</html>
