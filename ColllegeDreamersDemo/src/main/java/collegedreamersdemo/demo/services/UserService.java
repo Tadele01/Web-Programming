@@ -1,32 +1,28 @@
+
 package collegedreamersdemo.demo.services;
 
+import java.util.Optional;
+import java.util.Set;
 
 import collegedreamersdemo.demo.models.User;
-import collegedreamersdemo.demo.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import collegedreamersdemo.demo.models.security.UserRole;
 
 
-@Service("userService")
-public class UserService {
 
-    private UserRepository userRepository;
+public interface UserService {
 
-    @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    User createUser(User user, Set<UserRole> userRoles);
 
-    public User findByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
+    User findByUsername(String username);
 
-    public User findByConfirmationToken(String confirmationToken) {
-        return userRepository.findByConfirmationToken(confirmationToken);
-    }
+    User findByEmail(String email);
 
-    public void saveUser(User user) {
-        userRepository.save(user);
-    }
+    User save(User user);
 
+//    Optional<User> findById(Long id);
+    //User findOne(Long id);
+
+    void saveUser(User user);
+
+    User findByConfirmationToken(String token);
 }

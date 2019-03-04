@@ -1,0 +1,13 @@
+spring:
+application:
+name: ColllegeDreamersDemo
+boot:
+admin:
+client:
+url: http://localhost:9090
+info:
+  Contact:
+    Gmail:John2@gmail.com
+    Gmail:Tade@gmail.com
+    phone:0912760322
+

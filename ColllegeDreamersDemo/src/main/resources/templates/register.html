@@ -12,32 +12,27 @@
 
     <title>Registration Page</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-          crossorigin="anonymous" />
-    <link rel="stylesheet" href="../static/css/styles.css"  th:href="@{/css/styles.css}"/>
-    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
-    <link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
-    <link rel="stylesheet" href="../static/css/bootstrap-social.css" th:href="@{/css/bootstrap-social.css}">
-
-
-
-    <link th:href="@{css/style.css}" rel="stylesheet" />
+    <link rel="stylesheet"   th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <script th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js}"></script>
+    <script th:src="@{http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js}" type="text/javascript"></script>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}">
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js}">
+    <link rel="stylesheet"  th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <link rel="stylesheet"  th:href="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css}">
 </head>
-<header th:replace="layout :: site-header" />
-<br><br><br><br><br><br><br><br><br><br><br>
-<body class="gray-bg">
 
-<div class="middle-box text-center loginscreen animated fadeInDown">
-    <div>
+
+<body class="gray-bg">
+<header th:replace="layout :: site-header" />
+<div class="middle-box text-center loginscreen animated fadeInDown jumbotron" style="margin-top: 100px;margin-left:300px;padding-left: 200px;width: 700px">
+    <div style="line-height: normal" >
 
         <h4>New User Registration</h4>
 
         <form autocomplete="off" action="#" th:action="@{/register}"
               th:object="${user}" method="post" class="m-t" role="form"
-              data-toggle="validator">
+              data-toggle="validator" >
 
             <div th:if="${confirmationMessage}" class="alert alert-success"
                  role="alert" th:text=${confirmationMessage}></div>
@@ -47,39 +42,39 @@
                  th:text="${errorMessage}"></div>
 
 
-            <div th:if="${#fields.hasErrors('firstName')}"
-                 th:errors="*{firstName}"
+            <div th:if="${#fields.hasErrors('username')}"
+                 th:errors="*{username}"
                  class="validation-message alert alert-danger" role="alert"></div>
 
-            <div th:if="${#fields.hasErrors('lastName')}"
-                 th:errors="*{lastName}"
-                 class="validation-message alert alert-danger" role="alert"></div>
+            <!--<div th:if="${#fields.hasErrors('lastName')}"-->
+                 <!--th:errors="*{lastName}"-->
+                 <!--class="validation-message alert alert-danger" role="alert"></div>-->
 
             <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
                  class="validation-message alert alert-danger" role="alert"></div>
 
             <div class="form-group input-group has-feedback">
-                <label th:if="${#fields.hasErrors('firstName')}"
-                       th:errors="*{firstName}" class="validation-message"></label>
+                <label th:if="${#fields.hasErrors('username')}"
+                       th:errors="*{username}" class="validation-message"></label>
                 <span class="input-group-addon">
             <span class="glyphicon glyphicon-user"></span>
           </span>
 
-                <input type="text" th:field="*{firstName}"
+                <input type="text" th:field="*{username}"
                        placeholder="First Name" class="form-control" required />
                 <span class="glyphicon form-control-feedback"
                       aria-hidden="true"></span>
             </div>
 
-            <div class="form-group input-group has-feedback">
-          <span class="input-group-addon">
-            <span class="glyphicon glyphicon-user"></span>
-          </span>
-                <input type="text" th:field="*{lastName}"
-                       placeholder="Last Name" class="form-control" required />
-                <span class="glyphicon form-control-feedback"
-                      aria-hidden="true"></span>
-            </div>
+            <!--<div class="form-group input-group has-feedback">-->
+          <!--<span class="input-group-addon">-->
+            <!--<span class="glyphicon glyphicon-user"></span>-->
+          <!--</span>-->
+                <!--<input type="text" th:field="*{lastName}"-->
+                       <!--placeholder="Last Name" class="form-control" required />-->
+                <!--<span class="glyphicon form-control-feedback"-->
+                      <!--aria-hidden="true"></span>-->
+            <!--</div>-->
 
             <div class="form-group input-group has-feedback">
           <span class="input-group-addon">
@@ -93,25 +88,27 @@
 
             </div>
 
+            <div class="form-group input-group has-feedback">
+          <span class="input-group-addon">
+            <span class="glyphicon glyphicon-envelope"></span>
+          </span>
+                <input type="password" th:field="*{password}"
+                       placeholder="" class="form-control"x
+                       data-error="invalid password" required />
+                <span class="glyphicon form-control-feedback"
+                      aria-hidden="true"></span>
+
+            </div>
+
             <button type="submit"
                     class="btn btn-primary block full-width m-b">Register</button>
+            <a th:href="@{/loginU}">Already Have Account</a>
 
         </form>
 
     </div>
 </div>
 
-<!-- jQuery-->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<!-- Bootstrap -->
-<script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
-
-<!-- Bootstrap Validator plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
 
 
 </body>

@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+
+>
+<head th:fragment="site-head">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet"   th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <script th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js}"></script>
+    <script th:src="@{http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js}" type="text/javascript"></script>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}">
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js}">
+    <link rel="stylesheet"  th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <link rel="stylesheet"  th:href="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css}">
+    <!--<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"-->
+    <!--rel="stylesheet"-->
+    <!--integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"-->
+    <!--crossorigin="anonymous" />-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="../static/css/styles.css" th:href="@{/css/styles.css}" />&ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />&ndash;&gt;-->
+    <!--&lt;!&ndash;<link rel="icon" href="../static/images/favicon.ico" th:href="@{/images/favicon.ico}"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="../static/javascript/javascript.js" th:src="@{/javascript/javascript.js}"></script>&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="../static/javascript/jquery.min.js" th:src="@{/javascript/jquery.min.js}"></script>&ndash;&gt;-->
+
+    <!--<script src="/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>-->
+    <!--&lt;!&ndash;<script src="/webjars/bootstrap/js/bootstrap.min.js" th:src="/webjars/bootstrap/js/bootstrap.min.js"></script>&ndash;&gt;-->
+    <!--<script src="/webjars/jquery/3.1.1/jquery.min.js" th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>-->
+    <!--<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"-->
+    <!--th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}"-->
+    <!--rel="stylesheet" media="screen" />-->
+    <!--<script src="/webjars/jquery/jquery.min.js" th:src="/webjars/jquery/jquery.min.js"></script>-->
+    <title>College Dreamers</title>
+</head>
+<body>
+
+<header th:fragment="site-header">
+    <header>
+        <nav class="navbar navbar-dark navbar-expand-sm fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse lead" id="Navbar" style="background-color:#16181b;font-size: 18px" >
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active"><a class="nav-link" th:href="@{/index}">
+                            Home</a></li>
+                        <li class="nav-item"><a class="nav-link"   th:href="@{/EditCourse}">Courses</a></li>
+                        <li class="nav-item"><a class="nav-link" th:href="@{/AddExam}">Exams</a></li>
+                        <li class="nav-item "><a class="nav-link" href="discussion.html" th:href="@{EditCourse.html}">
+                            Discuss</a></li>
+                        <li class="nav-item "><a class="nav-link" href="news.html" th:href="@{news.html}">
+                            News</a></li>
+                        <li class="nav-item "><a class="nav-link" href="aboutus.html" th:href="@{aboutus.html}">
+                            About Us</a></li>
+                        <li class="nav-item "><a class="nav-link" href="aboutus.html" th:href="@{/register}">
+                            Sign In</a></li>
+
+
+                    </ul>
+
+
+                </div>
+            </div>
+
+
+        </nav>
+
+    </header>
+    <!--<header>-->
+    <!--<a href="index.html" th:href="@{/}">College Dreamers</a>-->
+    <!--<a href="index.html" th:href="@{/}" >Home</a>-->
+    <!--<a href="" th:href="@{/users/login}">Courses</a>-->
+    <!--<a href="" th:href="@{/users/register}">Exams</a>-->
+    <!--<a href="" th:href="@{/posts}">Discuss</a>-->
+    <!--<a href="" th:href="@{/posts/create}">News</a>-->
+    <!--<a href="" th:href="@{/users}">About us</a>-->
+    <!--<div id="logged-in-info"> <span> <b>(user)</b></span>-->
+    <!--<form method="post" th:action="@{/users/logout}">-->
+    <!--<input type="submit" value="Logout"/>-->
+    <!--</form>-->
+    <!--</div>-->
+    <!--</header>-->
+
+    <!--<ul id="messages" th:with="notifyMessages=${session[T(collegedreamers.demo.services-->
+    <!--.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY]}">-->
+    <!--<li th:each="msg : ${notifyMessages}"-->
+    <!--th:text="${msg.text}"-->
+    <!--th:class="${#strings.toLowerCase(msg.type)}">-->
+    <!--</li>-->
+    <!--<span th:if="${notifyMessages}" th:remove="all" th:text="${session.remove(-->
+    <!--T(collegedreamers.demo.services.NotificationServiceImpl).NOTIFY_MSG_SESSION_KEY)}"></span>-->
+    <!--</ul>-->
+</header>
+<h1>Welcome</h1>
+<p>Welcome to the Spring MVC Blog.</p>
+
+
+<footer class="footer" th:fragment="site-footer">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-7 col-sm-5">
+                <h5>Our Address</h5>
+                <address>
+                    Addis Ababa, Ethiopia<br>
+                    Addis Ababa Inistitute of Technology <br>
+                    New Generation Technology Inc. Head office<br>
+                    <i class="fa fa-phone fa-lg"></i> +251 922 874 972<br>
+                    <i class="fa fa-fax fa-lg"></i> +251 922 874 972<br>
+                    <i class="fa fa-envelope fa-lg"></i> <a href="mailto:confusion@food.net">college-dreamers@gmail.com</a>
+                </address>
+            </div>
+            <div class="col-12 col-sm-4 align-self-center">
+                <div class="text-center">
+                    <h2 class="lead">Contact us </h2>
+                    <a class="btn btn-social-icon btn-google" href="http://google.com/+"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com/profile.php?id="> <i
+                            class="fa fa-facebook fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-linkedin" href="http://www.linkedin.com/in/"> <i class="fa fa-linkedin fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"> <i class="fa fa-twitter fa-lg"></i></a>
+                    <a class="btn btn-social-icon btn-google" href="http://youtube.com/"> <i class="fa fa-youtube fa-lg"></i></a>
+                    <a class="btn btn-social-icon " href="mailto:"><i class="fa fa-envelope-o fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <p>© Copyright 2018 College Dreamers</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- jQuery-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<!-- Bootstrap Validator plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+</body>
+</html>

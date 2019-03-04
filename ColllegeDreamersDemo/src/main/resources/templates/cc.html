@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <meta charset="UTF-8">
+    <title>College Dreamers</title>
+    <link rel="stylesheet"   th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <script th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js}"></script>
+    <script th:src="@{http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js}" type="text/javascript"></script>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}">
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js}">
+    <link rel="stylesheet"  th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <link rel="stylesheet"  th:href="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css}">
+</head>
+<header th:replace="layout :: site-header" />
+<div class="container jumbotron" style="padding-left: 200px;margin-top: 120px" >
+    <div class="card-deck">
+        <div class="card-columns">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-5 ml-0">
+
+                <div class="card" th:each="exam  : ${exams}">
+                    <p th:text="${exam.exam_name}"></p>
+                    <p th:text="${exam.exam_sheet}"></p>
+                    <input th:type="radio" th:value="A" th:name="options" th:text="${exam.option1}" /><br>
+                    <input th:type="radio" th:value="B" th:name="options" th:text="${exam.option2}" /><br>
+                    <input th:type="radio" th:value="C" th:name="options" th:text="${exam.option3}" /><br>
+                    <button type="submit"  class="btn btn-primary block full-width m-b">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- jQuery-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+
+<!-- Bootstrap Validator plugin -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+</body>
+
+</html>

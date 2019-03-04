@@ -1,57 +1,94 @@
 package collegedreamersdemo.demo.models;
 
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.data.annotation.Transient;
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 
+import collegedreamersdemo.demo.constant.UserType;
+import collegedreamersdemo.demo.models.security.Authority;
+import collegedreamersdemo.demo.models.security.UserRole;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "user")
-public class User {
+public class User implements UserDetails, Serializable{
+
+    private static final long serialVersionUID = 902783495L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private int id;
+    @Column(name="Id", nullable=false, updatable = false)
+    private Long id;
 
-    @Column(name = "email", nullable = false, unique = true)
-    @Email(message = "Please provide a valid e-mail")
-    @NotEmpty(message = "Please provide an e-mail")
-    private String email;
-
-    @Column(name = "password")
-    @Transient
+    private String username;
     private String password;
 
-    @Column(name = "first_name")
-    @NotEmpty(message = "Please provide your first name")
-    private String firstName;
+    private String email;
+    private boolean enabled = true;
 
-    @Column(name = "last_name")
-    @NotEmpty(message = "Please provide your last name")
-    private String lastName;
+    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<UserRole> userRoles = new HashSet<>();
 
-    @Column(name = "enabled")
-    private boolean enabled;
+    @OneToOne(targetEntity = Student.class)
+    @JsonIgnore
+    private Student student;
 
-    @Column(name = "confirmation_token")
-    private String confirmationToken;
+    @OneToOne(targetEntity = Lecturer.class)
+    @JsonIgnore
+    private Lecturer lecturer;
 
-    public String getConfirmationToken() {
-        return confirmationToken;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_type")
+    private UserType userType;
+
+
+    public Student getStudent() {
+        return student;
     }
 
-    public void setConfirmationToken(String confirmationToken) {
-        this.confirmationToken = confirmationToken;
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
-    public int getId() {
+    public Lecturer getLecturer() {
+        return lecturer;
+    }
+
+    public void setLecturer(Lecturer lecturer) {
+        this.lecturer = lecturer;
+    }
+
+
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -62,20 +99,18 @@ public class User {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
+
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public Set<UserRole> getUserRoles() {
+        return userRoles;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUserRoles(Set<UserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 
     public String getEmail() {
@@ -86,11 +121,39 @@ public class User {
         this.email = email;
     }
 
-    public boolean getEnabled() {
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+
+        return authorities;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(boolean value) {
-        this.enabled = value;
+
+    public void setConfirmationToken(String toString) {
     }
 }

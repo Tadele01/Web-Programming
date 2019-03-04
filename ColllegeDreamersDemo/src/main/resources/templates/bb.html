@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <meta charset="UTF-8">
+    <title>College Dreamers</title>
+    <link rel="stylesheet"   th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <script th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js}"></script>
+    <script th:src="@{http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js}" type="text/javascript"></script>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}">
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js}">
+    <link rel="stylesheet"  th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <link rel="stylesheet"  th:href="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css}">
+</head>
+<body>
+<header th:replace="layout :: site-header" />
+<div class="container" >
+
+
+
+        <div class="row mt-5">
+            <div class="card lead col-md-6 " th:each="course : ${courses}">
+                <div class="card-header" >
+                    <p th:text="${course.title}"></p>
+                </div>
+                <div class="card-body">
+                    <p th:text="${course.description}"></p>
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form method="get" th:action="@{'/admin/deletecourse/' + ${course.id}}">
+                                <button class="btn btn-danger" type="submit">Delete</button>
+                            </form>
+                        </div>
+                        <div class="col-md-6">
+                            <form method="get" th:action="@{'/admin/editcourse/' + ${course.id}}">
+                                <button class="btn btn-outline-primary" type="submit">Edit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+
+    </div>
+</div>
+</div>
+</body>
+</html>

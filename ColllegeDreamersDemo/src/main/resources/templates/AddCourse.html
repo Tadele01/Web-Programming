@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet"   th:href="@{/css/styles.css}"/>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}">
+    <script th:src="@{//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js}"></script>
+    <script th:src="@{http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js}" type="text/javascript"></script>
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}">
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js}">
+    <link rel="stylesheet"  th:href="@{https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+    <link rel="stylesheet"  th:href="@{https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css}">
+</head>
+<body>
+<header th:replace="layout :: site-header" />
+<br><br><br><br>
+<div style="padding-left: 400px;" class="jumbotron">
+<h2>Add Course Here</h2>
+
+<form th:action="@{/admin/addcourse}" th:object="${course}" method="post" role="form">
+    <!--Course ID:<br>-->
+    <!--<input  type="text" name="CourseId">-->
+    <!--<br>-->
+    Course Code:<br>
+
+    <input th:field="*{courseCode}" type="text" name="CourseCode">
+    <br>
+    Course Credit:<br>
+    <input th:field="*{credit}" type="text" name="CourseCredit">
+    <br>
+    Course Description:<br>
+    <input th:field="*{description}" type="text" name="CourseDescription">
+    <!--<br>-->
+    <!--Is Active:<br>-->
+    <!--<input th:field="*{isActive}" type="text" name="IsActive">-->
+    <br>
+    Course Name:<br>
+    <input th:field="*{title}" type="text" name="CourseName">
+    <br>
+
+    <button type="Submit">Submit</button>
+</form>
+</div>
+</body>
+
+
+</html>
